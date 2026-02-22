@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white dark:bg-dark-900">
+    <div className="min-h-screen bg-white dark:bg-dark-900 transition-colors duration-300">
       <Navbar />
       <main>
         <Hero />
@@ -25,4 +25,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;

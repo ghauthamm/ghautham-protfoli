@@ -105,8 +105,8 @@ const Hero: React.FC = () => {
               Get In Touch
             </motion.button>
             <motion.a
-              href="/ghautham(reume).pdf"
-              download
+              href="/ghautham_resume.pdf"
+              download="Ghautham_M_Resume.pdf"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 px-8 py-3.5 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:border-primary-500 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400 font-semibold rounded-xl transition-all duration-300 bg-white/50 dark:bg-white/5 backdrop-blur-sm"

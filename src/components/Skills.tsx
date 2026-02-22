@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Database, Zap } from 'lucide-react';
+import { Code, Database, Zap, Layout } from 'lucide-react';
 
 const Skills: React.FC = () => {
   const skillCategories = [
     {
       title: "Frontend Development",
-      icon: Code,
+      icon: Layout,
+      gradient: 'from-blue-500 to-cyan-500',
       skills: [
         { name: "React.js", level: 90 },
         { name: "TypeScript", level: 85 },
@@ -18,7 +19,8 @@ const Skills: React.FC = () => {
     },
     {
       title: "Backend Development",
-      icon: Database,
+      icon: Code,
+      gradient: 'from-emerald-500 to-teal-500',
       skills: [
         { name: "Node.js", level: 85 },
         { name: "Express.js", level: 80 },
@@ -31,6 +33,7 @@ const Skills: React.FC = () => {
     {
       title: "Database & Cloud",
       icon: Database,
+      gradient: 'from-purple-500 to-pink-500',
       skills: [
         { name: "MongoDB", level: 80 },
         { name: "PostgreSQL", level: 75 },
@@ -43,6 +46,7 @@ const Skills: React.FC = () => {
     {
       title: "Tools & Others",
       icon: Zap,
+      gradient: 'from-amber-500 to-orange-500',
       skills: [
         { name: "VS Code", level: 95 },
         { name: "Figma", level: 70 },
@@ -69,33 +73,37 @@ const Skills: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
           className="text-center mb-12 lg:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Skills & <span className="gradient-text">Expertise</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             My technical skills and expertise across various technologies and frameworks.
           </p>
         </motion.div>
 
         {/* Skills Categories */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-6">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-              className="bg-gray-50 dark:bg-dark-800 rounded-lg p-6"
+              viewport={{ once: true }}
+              className="bg-gray-50 dark:bg-dark-800 rounded-2xl p-6 border border-gray-100 dark:border-gray-700/50 hover:shadow-lg dark:hover:shadow-black/20 transition-all duration-300"
             >
               <div className="flex items-center mb-6">
-                <category.icon className="w-6 h-6 text-primary-600 dark:text-primary-400 mr-3" />
+                <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${category.gradient} flex items-center justify-center mr-3 shadow-sm`}>
+                  <category.icon className="w-5 h-5 text-white" />
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                   {category.title}
                 </h3>
               </div>
-              
+
               <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex}>
@@ -103,16 +111,17 @@ const Skills: React.FC = () => {
                       <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                         {skill.name}
                       </span>
-                      <span className="text-xs text-primary-600 dark:text-primary-400 font-medium">
+                      <span className="text-xs text-primary-600 dark:text-primary-400 font-semibold bg-primary-50 dark:bg-primary-500/10 px-2 py-0.5 rounded-full">
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="w-full bg-gray-200 dark:bg-dark-700 rounded-full h-2">
+                    <div className="w-full bg-gray-200 dark:bg-dark-700 rounded-full h-2 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                        className="bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full"
+                        viewport={{ once: true }}
+                        className={`bg-gradient-to-r ${category.gradient} h-2 rounded-full`}
                       ></motion.div>
                     </div>
                   </div>
@@ -127,6 +136,7 @@ const Skills: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
           className="mt-12"
         >
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
@@ -138,8 +148,10 @@ const Skills: React.FC = () => {
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="bg-gray-100 dark:bg-dark-700 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-lg text-sm font-medium text-center hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300 transition-all duration-300"
+                transition={{ duration: 0.3, delay: index * 0.03 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                className="bg-gray-100 dark:bg-dark-800 text-gray-700 dark:text-gray-300 px-3 py-2.5 rounded-xl text-sm font-medium text-center hover:bg-primary-50 dark:hover:bg-primary-500/10 hover:text-primary-700 dark:hover:text-primary-300 transition-all duration-300 border border-gray-200/50 dark:border-gray-700/50 cursor-default"
               >
                 {skill}
               </motion.div>
@@ -151,4 +163,4 @@ const Skills: React.FC = () => {
   );
 };
 
-export default Skills; 
+export default Skills;

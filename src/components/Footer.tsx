@@ -1,34 +1,34 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, Heart, ArrowUp } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  
+
   const socialLinks = [
     {
       name: 'GitHub',
       href: 'https://github.com/ghauthamm',
       icon: Github,
-      color: 'hover:text-gray-600 dark:hover:text-gray-300'
+      hoverBg: 'hover:bg-gray-700'
     },
     {
       name: 'LinkedIn',
-      href: ' https://www.linkedin.com/in/ghautham-m-250b80266/',
+      href: 'https://www.linkedin.com/in/ghautham-m-250b80266/',
       icon: Linkedin,
-      color: 'hover:text-blue-600 dark:hover:text-blue-400'
+      hoverBg: 'hover:bg-blue-600'
     },
     {
       name: 'Twitter',
       href: 'https://twitter.com/ghautham',
       icon: Twitter,
-      color: 'hover:text-blue-400 dark:hover:text-blue-300'
+      hoverBg: 'hover:bg-sky-500'
     },
     {
       name: 'Email',
-      href: 'ghauthamm@gmail.com',
+      href: 'mailto:ghauthamm@gmail.com',
       icon: Mail,
-      color: 'hover:text-red-600 dark:hover:text-red-400'
+      hoverBg: 'hover:bg-red-500'
     }
   ];
 
@@ -48,31 +48,48 @@ const Footer: React.FC = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="bg-dark-900 text-white">
+    <footer className="bg-gray-900 dark:bg-dark-900 text-white relative border-t border-gray-800 dark:border-gray-700/50">
+      {/* Back to Top Button */}
+      <div className="absolute -top-5 left-1/2 -translate-x-1/2">
+        <motion.button
+          onClick={scrollToTop}
+          whileHover={{ scale: 1.1, y: -3 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-10 h-10 bg-gradient-to-r from-primary-600 to-blue-600 rounded-full flex items-center justify-center shadow-lg shadow-primary-500/30 hover:shadow-xl transition-all duration-300"
+        >
+          <ArrowUp className="w-5 h-5 text-white" />
+        </motion.button>
+      </div>
+
       <div className="container-custom py-12">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand Section */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
             className="md:col-span-2"
           >
             <h3 className="text-2xl font-bold gradient-text mb-4">Ghautham</h3>
-            <p className="text-gray-300 mb-6 max-w-md">
-              A passionate fullstack developer dedicated to creating innovative web solutions 
+            <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
+              A passionate fullstack developer dedicated to creating innovative web solutions
               and turning ideas into reality through code.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               {socialLinks.map((link, index) => (
                 <motion.a
                   key={index}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`p-2 rounded-lg bg-dark-800 hover:bg-dark-700 transition-all duration-300 ${link.color}`}
-                  whileHover={{ scale: 1.1 }}
+                  className={`p-2.5 rounded-xl bg-gray-800 dark:bg-dark-700 transition-all duration-300 text-gray-400 hover:text-white ${link.hoverBg}`}
+                  whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <link.icon className="w-5 h-5" />
@@ -82,19 +99,21 @@ const Footer: React.FC = () => {
           </motion.div>
 
           {/* Quick Links */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+            <ul className="space-y-2.5">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-gray-300 hover:text-white transition-colors duration-300 text-left"
+                    className="text-gray-400 hover:text-primary-400 transition-colors duration-300 text-left text-sm flex items-center gap-2 group"
                   >
+                    <span className="w-1.5 h-1.5 rounded-full bg-gray-600 group-hover:bg-primary-400 transition-colors duration-300"></span>
                     {link.name}
                   </button>
                 </li>
@@ -103,33 +122,44 @@ const Footer: React.FC = () => {
           </motion.div>
 
           {/* Contact Info */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <div className="space-y-2 text-gray-300">
-              <p>ghauthamms@example.com</p>
-              <p>+1 (91)7339010563</p>
-              <p>Erode, India</p>
+            <h4 className="text-lg font-semibold mb-4 text-white">Contact</h4>
+            <div className="space-y-3 text-gray-400 text-sm">
+              <p className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-primary-400" />
+                ghauthamm@gmail.com
+              </p>
+              <p className="flex items-center gap-2">
+                <Github className="w-4 h-4 text-primary-400" />
+                +91 7339010563
+              </p>
+              <p className="flex items-center gap-2">
+                <Linkedin className="w-4 h-4 text-primary-400" />
+                Erode, India
+              </p>
             </div>
           </motion.div>
         </div>
 
         {/* Bottom Bar */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="border-t border-dark-700 mt-8 pt-8"
+          viewport={{ once: true }}
+          className="border-t border-gray-800 dark:border-gray-700/50 mt-10 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-500 text-sm">
               © {currentYear} Ghautham. All rights reserved.
             </p>
-            <p className="text-gray-400 text-sm flex items-center mt-2 md:mt-0">
-              Made with <Heart className="w-4 h-4 mx-1 text-red-500" /> by Ghautham
+            <p className="text-gray-500 text-sm flex items-center mt-2 md:mt-0">
+              Made with <Heart className="w-4 h-4 mx-1.5 text-red-500 animate-pulse" /> by Ghautham
             </p>
           </div>
         </motion.div>
@@ -138,4 +168,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer; 
+export default Footer;
