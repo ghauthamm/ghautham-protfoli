@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { User, MapPin, Mail, Phone, Code, Palette, Server, Database } from 'lucide-react';
+import { User, MapPin, Mail, Phone, Code, Palette, Server, Database, Award } from 'lucide-react';
 
 const About: React.FC = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -248,6 +248,38 @@ const About: React.FC = () => {
                 When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
                 or sharing knowledge with the developer community.
               </p>
+            </motion.div>
+
+            {/* Notable Achievements */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-gradient-to-br from-primary-600 to-blue-700 rounded-2xl p-6 shadow-xl shadow-primary-500/20 text-white border border-white/10"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold">Notable Achievements</h3>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-bold flex items-center gap-2">
+                    🏆 Smart India Hackathon 2025
+                  </h4>
+                  <p className="text-blue-50 text-sm mt-1">
+                    National Level Winner (1st Place) - Government of Odisha.
+                    Won ₹1,50,000 for innovative software solution.
+                  </p>
+                </div>
+                <div className="pt-2 border-t border-white/10">
+                  <h4 className="font-bold flex items-center gap-2">
+                    🥇 Top Coders Event
+                  </h4>
+                  <p className="text-blue-50 text-sm mt-1">
+                    1st Place - Recognized for exceptional coding and analytical skills.
+                  </p>
+                </div>
+              </div>
             </motion.div>
 
             {/* What I Do - with 3D tilt */}

@@ -37,6 +37,7 @@ const Navbar: React.FC = () => {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Services', href: '#services' },
     { name: 'Projects', href: '#projects' },
     { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
@@ -57,8 +58,8 @@ const Navbar: React.FC = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-500 ${scrolled
-          ? 'bg-white/80 backdrop-blur-xl shadow-lg shadow-black/5 dark:bg-dark-900/80 dark:shadow-black/20'
-          : 'bg-transparent'
+        ? 'bg-white/80 backdrop-blur-xl shadow-lg shadow-black/5 dark:bg-dark-900/80 dark:shadow-black/20'
+        : 'bg-transparent'
         }`}
     >
       <div className="container-custom">

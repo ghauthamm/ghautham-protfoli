@@ -11,13 +11,14 @@ const Education: React.FC = () => {
       institution: "Kongu Engineering College",
       location: "Perundurai, Erode-638060",
       period: "2024 - 2026",
-      gpa: "7.38 CGPA",
+      gpa: "7.43 CGPA",
       description: "Pursuing Master's degree in Computer Applications with focus on advanced software development, database management, and modern programming technologies.",
       achievements: [
+        "Winner – Smart India Hackathon 2025 (National Level) - Led team to secure 1st Place under Government of Odisha (Electronics & IT Department)",
+        "Won ₹1,50,000 cash prize for innovative software solution in SIH 2025",
+        "1st Place – Top Coders Event - Recognized for exceptional coding and analytical skills",
         "Currently pursuing MCA with strong academic performance",
-        "Specialized in advanced software development methodologies",
-        "Learning modern programming frameworks and tools",
-        "Participating in technical workshops and seminars"
+        "Specialized in advanced software development methodologies"
       ],
       courses: [
         "Advanced Software Engineering",

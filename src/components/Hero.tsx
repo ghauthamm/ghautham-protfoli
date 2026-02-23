@@ -250,7 +250,7 @@ const Hero: React.FC = () => {
               <span className="relative z-10">Get In Touch</span>
             </motion.button>
             <motion.a
-              href="/ghautham_resume.pdf"
+              href="/ghautham_one_page_resume.pdf"
               download="Ghautham_M_Resume.pdf"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
