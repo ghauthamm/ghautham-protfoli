@@ -1,77 +1,59 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Eye, ChevronRight } from 'lucide-react';
+import { ExternalLink, Github, Eye, ChevronRight, Download } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState('all');
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce platform with React frontend, Node.js backend, and MongoDB database. Features include user authentication, product management, shopping cart, and payment integration.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
-      liveUrl: "https://ecommerce-demo.com",
-      githubUrl: "https://github.com/ghauthamm/ecommerce",
+      title: "Vehicle Service Management System",
+      description: "Developed a booking and service tracking system with a structured database for customer and service records, including real-time service status updates.",
+      image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=500&h=300&fit=crop",
+      technologies: ["JavaScript", "Node.js", "Express.js", "MongoDB", "Realtime Updates"],
+      liveUrl: "https://github.com/ghauthamm",
+      githubUrl: "https://github.com/ghauthamm",
       featured: true,
       category: 'fullstack'
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop",
-      technologies: ["React", "TypeScript", "Socket.io", "Express", "PostgreSQL"],
-      liveUrl: "https://task-app-demo.com",
-      githubUrl: "https://github.com/ghauthamm/task-app",
+      title: "AI-Powered Crop Yield Prediction",
+      description: "Built a mobile app using Flutter and Firebase, integrated machine learning models for crop prediction, and delivered insights based on soil and weather data.",
+      image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=500&h=300&fit=crop",
+      technologies: ["Flutter", "Firebase", "Python", "Machine Learning", "Data Analysis"],
+      liveUrl: "https://github.com/ghauthamm",
+      apkUrl: "https://github.com/ghauthamm",
+      githubUrl: "https://github.com/ghauthamm",
+      featured: true,
+      category: 'ml'
+    },
+    {
+      title: "Samy Trends - Online Clothing Store",
+      description: "A full-stack e-commerce web application for managing clothing products where users can browse products, view details, and interact with a modern shopping interface. Features include responsive product listings, product detail view, real-time data handling with Firebase, and Firebase Hosting deployment. My contribution covered complete UI design and development, backend and database integration, deployment, and responsive optimization across devices. Future enhancements: add to cart and checkout, payment integration (Razorpay/Stripe), authentication, and admin dashboard.",
+      image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=500&h=300&fit=crop",
+      technologies: ["React", "HTML", "CSS", "JavaScript", "Firebase", "Firestore", "Firebase Hosting"],
+      liveUrl: "https://samy-trend.web.app/",
+      githubUrl: "https://github.com/ghauthamm",
       featured: true,
       category: 'fullstack'
     },
     {
-      title: "Weather Dashboard",
-      description: "A weather dashboard with interactive charts, location-based forecasts, and historical data visualization using Chart.js.",
-      image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=500&h=300&fit=crop",
-      technologies: ["React", "Chart.js", "OpenWeather API", "Tailwind CSS"],
-      liveUrl: "https://weather-dashboard.com",
-      githubUrl: "https://github.com/ghauthamm/weather-app",
-      featured: false,
-      category: 'frontend'
-    },
-    {
-      title: "Blog Platform",
-      description: "A modern blog platform with markdown support, SEO optimization, and admin dashboard for content management.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop",
-      technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Vercel"],
-      liveUrl: "https://blog-platform.com",
-      githubUrl: "https://github.com/ghauthamm/blog-platform",
-      featured: false,
+      title: "Food Delivery Management System",
+      description: "A mobile-based food delivery management system built with Flutter and Firebase to manage employees, clients, orders, and inventory in real time. It automates order tracking and stock updates, supports employee attendance and role records, maintains customer profiles with order history, and provides order lifecycle tracking from pending to delivered. Contributions include end-to-end mobile app development, Firebase real-time synchronization, implementation of employee, client, order, and stock modules, and responsive UI optimization. Future enhancements include payment integration, push notifications, live map tracking, and analytics dashboard.",
+      image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=500&h=300&fit=crop",
+      technologies: ["Flutter", "Firebase", "Cloud Firestore", "Realtime Database", "Firebase Auth"],
+      liveUrl: "https://github.com/ghauthamm/Food-Catering-Admin-Management-System-flutter",
+      apkUrl: "https://github.com/ghauthamm/Food-Catering-Admin-Management-System-flutter",
+      githubUrl: "https://github.com/ghauthamm/Food-Catering-Admin-Management-System-flutter",
+      featured: true,
       category: 'fullstack'
-    },
-    {
-      title: "Chat Application",
-      description: "Real-time chat application with user authentication, message history, and file sharing capabilities.",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop",
-      technologies: ["React", "Socket.io", "Node.js", "MongoDB", "AWS S3"],
-      liveUrl: "https://chat-app-demo.com",
-      githubUrl: "https://github.com/ghauthamm/chat-app",
-      featured: false,
-      category: 'fullstack'
-    },
-    {
-      title: "Portfolio Website",
-      description: "A responsive portfolio website built with React, TypeScript, and Tailwind CSS with smooth animations and dark mode.",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8b6a6b?w=500&h=300&fit=crop",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      liveUrl: "https://portfolio-demo.com",
-      githubUrl: "https://github.com/ghauthamm/portfolio",
-      featured: false,
-      category: 'frontend'
     }
   ];
 
   const filters = [
     { label: 'All', value: 'all' },
     { label: 'Full Stack', value: 'fullstack' },
-    { label: 'Frontend', value: 'frontend' },
+    { label: 'Machine Learning', value: 'ml' },
   ];
 
   const filteredProjects = filter === 'all'
@@ -139,7 +121,7 @@ const Projects: React.FC = () => {
             viewport={{ once: true }}
             className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
           >
-            A showcase of my recent projects that demonstrate my skills in fullstack development and problem-solving.
+            Key academic and practical projects spanning full-stack development, machine learning, mobile apps, and database design.
           </motion.p>
 
           {/* Filter Buttons */}
@@ -286,6 +268,19 @@ const Projects: React.FC = () => {
                       <Github className="w-4 h-4" />
                       Code
                     </motion.a>
+                    {project.apkUrl && (
+                      <motion.a
+                        href={project.apkUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05, x: 3 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex items-center gap-2 px-4 py-2 border border-emerald-300 dark:border-emerald-600 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-500/10 rounded-xl text-sm font-medium"
+                      >
+                        <Download className="w-4 h-4" />
+                        APK
+                      </motion.a>
+                    )}
                   </div>
                 </div>
               </motion.div>

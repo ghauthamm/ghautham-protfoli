@@ -5,46 +5,18 @@ import { Calendar, MapPin, Building } from 'lucide-react';
 const Experience: React.FC = () => {
   const experiences = [
     {
-      title: 'Senior Fullstack Developer',
-      company: 'TechCorp Solutions',
-      location: 'Bangalore, India',
-      period: 'Jan 2023 - Present',
-      description: 'Leading development of enterprise-level applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.',
+      title: 'Python Full Stack Developer Intern',
+      company: 'ThirvuSoft Private Limited',
+      location: 'Coimbatore, India',
+      period: 'Feb 2026 - Apr 2026',
+      description: 'Worked on ERP-based web application development, built backend modules with Python and REST APIs, assisted frontend and database integration, and gained practical ERP workflow experience.',
       achievements: [
-        'Led a team of 5 developers in building a scalable e-commerce platform',
-        'Improved application performance by 40% through optimization techniques',
-        'Implemented CI/CD pipelines reducing deployment time by 60%',
-        'Mentored 3 junior developers and conducted code reviews'
+        'Worked on ERP-based web application development',
+        'Developed backend modules using Python and REST APIs',
+        'Assisted in frontend development and database integration',
+        'Gained hands-on experience in ERP workflows and business logic'
       ],
-      technologies: ['React', 'Node.js', 'AWS', 'Docker', 'PostgreSQL', 'Redis']
-    },
-    {
-      title: 'Fullstack Developer',
-      company: 'Digital Innovations Ltd',
-      location: 'Mumbai, India',
-      period: 'Mar 2021 - Dec 2022',
-      description: 'Developed and maintained multiple web applications using modern JavaScript frameworks and databases.',
-      achievements: [
-        'Built 3 client-facing applications with 99.9% uptime',
-        'Reduced bug reports by 50% through improved testing practices',
-        'Collaborated with UX team to improve user experience',
-        'Participated in agile development processes'
-      ],
-      technologies: ['JavaScript', 'React', 'Express.js', 'MongoDB', 'Git']
-    },
-    {
-      title: 'Frontend Developer',
-      company: 'WebTech Solutions',
-      location: 'Delhi, India',
-      period: 'Jun 2020 - Feb 2021',
-      description: 'Focused on creating responsive and interactive user interfaces for various client projects.',
-      achievements: [
-        'Developed 10+ responsive websites for clients',
-        'Optimized website loading speed by 30%',
-        'Implemented modern CSS frameworks and animations',
-        'Worked closely with designers to implement pixel-perfect designs'
-      ],
-      technologies: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap']
+      technologies: ['Python', 'REST APIs', 'ERP', 'Frontend Integration', 'Database Integration']
     }
   ];
 
@@ -60,7 +32,7 @@ const Experience: React.FC = () => {
         >
           <h2 className="text-4xl font-bold mb-4 gradient-text">Work Experience</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            My professional journey and the valuable experience I've gained along the way
+            Internship experience focused on ERP-based full stack web application development.
           </p>
         </motion.div>
 
@@ -154,36 +126,6 @@ const Experience: React.FC = () => {
           </div>
         </div>
 
-        {/* Education Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-20"
-        >
-          <h3 className="text-2xl font-bold text-center mb-8 text-gray-800 dark:text-gray-200">
-            Education
-          </h3>
-          <div className="bg-gray-50 dark:bg-dark-800 rounded-xl p-6 shadow-lg max-w-2xl mx-auto">
-            <div className="text-center">
-              <h4 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">
-                Bachelor of Technology in Computer Science
-              </h4>
-              <p className="text-primary-600 dark:text-primary-400 font-medium mb-2">
-                University of Technology
-              </p>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                2016 - 2020 • Graduated with First Class
-              </p>
-              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                Specialized in software engineering with focus on web development, 
-                database management, and software architecture. Completed final year 
-                project on "Modern Web Application Development".
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

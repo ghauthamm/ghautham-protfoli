@@ -7,68 +7,61 @@ const Skills: React.FC = () => {
 
   const skillCategories = [
     {
-      title: "Frontend Development",
+      title: "Languages",
       icon: Layout,
       gradient: 'from-blue-500 to-cyan-500',
       barColor: 'from-blue-500 to-cyan-400',
       skills: [
-        { name: "React.js", level: 90 },
-        { name: "TypeScript", level: 85 },
-        { name: "Next.js", level: 80 },
-        { name: "Tailwind CSS", level: 90 },
-        { name: "HTML/CSS", level: 95 },
-        { name: "JavaScript", level: 90 }
+        { name: "C", level: 75 },
+        { name: "Java", level: 80 },
+        { name: "Python", level: 88 },
+        { name: "JavaScript", level: 85 },
+        { name: "SQL", level: 82 }
       ]
     },
     {
-      title: "Backend Development",
+      title: "Frontend",
       icon: Code,
       gradient: 'from-emerald-500 to-teal-500',
       barColor: 'from-emerald-500 to-teal-400',
       skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Express.js", level: 80 },
-        { name: "Python", level: 75 },
-        { name: "Django", level: 70 },
-        { name: "REST APIs", level: 85 },
-        { name: "GraphQL", level: 70 }
+        { name: "HTML", level: 92 },
+        { name: "CSS", level: 90 },
+        { name: "React.js", level: 88 },
+        { name: "React Native", level: 80 }
       ]
     },
     {
-      title: "Database & Cloud",
+      title: "Backend & Databases",
       icon: Database,
       gradient: 'from-purple-500 to-pink-500',
       barColor: 'from-purple-500 to-pink-400',
       skills: [
+        { name: "Node.js", level: 84 },
+        { name: "Express.js", level: 82 },
         { name: "MongoDB", level: 80 },
-        { name: "PostgreSQL", level: 75 },
-        { name: "Redis", level: 70 },
-        { name: "AWS", level: 75 },
-        { name: "Docker", level: 70 },
-        { name: "Git", level: 90 }
+        { name: "MySQL", level: 82 },
+        { name: "Firebase", level: 85 }
       ]
     },
     {
-      title: "Tools & Others",
+      title: "Tools & Cloud",
       icon: Zap,
       gradient: 'from-amber-500 to-orange-500',
       barColor: 'from-amber-500 to-orange-400',
       skills: [
-        { name: "VS Code", level: 95 },
-        { name: "Figma", level: 70 },
-        { name: "Postman", level: 85 },
-        { name: "Jest", level: 75 },
-        { name: "Agile", level: 80 },
-        { name: "CI/CD", level: 70 }
+        { name: "Git", level: 90 },
+        { name: "GitHub", level: 90 },
+        { name: "Jenkins", level: 75 },
+        { name: "Docker", level: 78 },
+        { name: "AWS (Basics)", level: 70 }
       ]
     }
   ];
 
   const additionalSkills = [
-    "Redux", "Context API", "React Query", "Framer Motion", "Chart.js", "D3.js",
-    "Socket.io", "JWT", "OAuth", "MySQL", "Elasticsearch", "Kubernetes",
-    "Vercel", "Netlify", "Heroku", "Cypress", "Mocha", "Chai", "Swagger",
-    "ESLint", "Prettier", "Storybook", "Webpack", "Vite"
+    "REST APIs", "Machine Learning", "Random Forest", "SVM", "Logistic Regression", "XGBoost",
+    "Flutter", "ERP Workflows", "Business Logic", "Database Design", "CRUD Operations", "Problem Solving"
   ];
 
   const containerVariants = {
@@ -136,7 +129,7 @@ const Skills: React.FC = () => {
             viewport={{ once: true }}
             className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
           >
-            My technical skills and expertise across various technologies and frameworks.
+            Technical expertise across programming languages, web and mobile development, backend systems, databases, and cloud tools.
           </motion.p>
         </motion.div>
 
