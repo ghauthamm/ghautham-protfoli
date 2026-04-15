@@ -12,7 +12,7 @@ const Projects: React.FC = () => {
       image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=500&h=300&fit=crop",
       technologies: ["JavaScript", "Node.js", "Express.js", "MongoDB", "Realtime Updates"],
       liveUrl: "https://github.com/ghauthamm",
-      githubUrl: "https://github.com/ghauthamm",
+      githubUrl: "https://github.com/ghauthamm/Vehicle-Service-Management-System",
       featured: true,
       category: 'fullstack'
     },
@@ -45,6 +45,16 @@ const Projects: React.FC = () => {
       liveUrl: "https://github.com/ghauthamm/Food-Catering-Admin-Management-System-flutter",
       apkUrl: "https://github.com/ghauthamm/Food-Catering-Admin-Management-System-flutter",
       githubUrl: "https://github.com/ghauthamm/Food-Catering-Admin-Management-System-flutter",
+      featured: true,
+      category: 'fullstack'
+    },
+    {
+      title: "MobileCare - Mobile Shop and Service Web App",
+      description: "A responsive web application for mobile product and service management, allowing users to browse phones and accessories, explore repair services, and use a customer-friendly contact flow. It includes organized product categories, service descriptions with booking-oriented flow, and modern navigation across mobile and desktop. Built and deployed as a fast live web app, with future scope for cart, checkout, payments, login, admin analytics dashboard, and real-time order tracking.",
+      image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&h=300&fit=crop",
+      technologies: ["HTML", "CSS", "JavaScript", "Firebase", "Firebase Hosting"],
+      liveUrl: "https://mobilecare-shop.web.app/",
+      githubUrl: "https://github.com/ghauthamm/MohanMobiCare_website",
       featured: true,
       category: 'fullstack'
     }
