@@ -8,7 +8,7 @@ const Experience: React.FC = () => {
       title: 'Python Full Stack Developer Intern',
       company: 'ThirvuSoft Private Limited',
       location: 'Coimbatore, India',
-      period: 'Feb 2026 - Apr 2026',
+      period: 'Feb 2026 - July 2026',
       description: 'Worked on ERP-based web application development, built backend modules with Python and REST APIs, assisted frontend and database integration, and gained practical ERP workflow experience.',
       achievements: [
         'Worked on ERP-based web application development',

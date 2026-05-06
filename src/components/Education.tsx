@@ -11,7 +11,7 @@ const Education: React.FC = () => {
       institution: "Kongu Engineering College",
       location: "Perundurai, Erode-638060",
       period: "2024 - 2026",
-      gpa: "7.43 CGPA",
+      gpa: "7.81 CGPA",
       description: "Pursuing Master's degree in Computer Applications with focus on advanced software development, database management, and modern programming technologies.",
       achievements: [
         "Winner – Smart India Hackathon 2025 (National Level) - Led team to secure 1st Place under Government of Odisha (Electronics & IT Department)",
