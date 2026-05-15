@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Mail, Sparkles, Eye } from 'lucide-react';
+import { ChevronDown, Mail, Sparkles, Eye, Download } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
@@ -27,10 +27,14 @@ const Hero: React.FC = () => {
     }
   };
 
+  const viewResume = () => {
+    window.open('/ghautham_two_page_resume.pdf', '_blank', 'noopener,noreferrer');
+  };
+
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/Ghautham_M_Resume.pdf';
-    link.download = 'Ghautham_M_Resume.pdf';
+    link.href = '/ghautham_two_page_resume.pdf';
+    link.download = 'ghautham_two_page_resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -259,7 +263,7 @@ const Hero: React.FC = () => {
               <span className="relative z-10">Get In Touch</span>
             </motion.button>
             <motion.button
-              onClick={downloadResume}
+              onClick={viewResume}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 px-8 py-3.5 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:border-primary-500 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400 font-semibold rounded-xl transition-all duration-300 bg-white/50 dark:bg-white/5 backdrop-blur-sm"
@@ -271,6 +275,20 @@ const Hero: React.FC = () => {
                 <Eye className="w-5 h-5" />
               </motion.div>
               View Resume
+            </motion.button>
+            <motion.button
+              onClick={downloadResume}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 px-8 py-3.5 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:border-primary-500 dark:hover:border-primary-400 hover:text-primary-600 dark:hover:text-primary-400 font-semibold rounded-xl transition-all duration-300 bg-white/50 dark:bg-white/5 backdrop-blur-sm"
+            >
+              <motion.div
+                animate={{ y: [0, -2, 0] }}
+                transition={{ duration: 1.4, repeat: Infinity }}
+              >
+                <Download className="w-5 h-5" />
+              </motion.div>
+              Download Resume
             </motion.button>
           </motion.div>
 
